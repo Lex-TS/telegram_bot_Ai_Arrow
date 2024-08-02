@@ -56,7 +56,8 @@ def connect_with_GChat(request: str, add_prompts: str = ''):
            max_tokens=max_tokens
        )
     result = giga.chat(chat)
-    return result.content
+    print(str(result))
+    return result.choices[0].message.content
 
 @dp.message(F.text, Command(commands_list[2]))
 async def cmd_code(message: types.Message):
@@ -67,6 +68,57 @@ async def cmd_code(message: types.Message):
         await message.reply(connect_with_GChat(message_text))
     else: 
         await message.reply("После команды нужно указать описание для действия")
+
+@dp.message(F.text, Command(commands_list[3]))
+async def cmd_code(message: types.Message):
+    message_text = message.text
+    message_text = message_text.replace(f"/{commands_list[3]}", '')
+    if (message_text is not None) and (message_text != ' ') and (message_text != ''):
+        await message.reply("Запрос принят, генерирую ответ")
+        await message.reply(connect_with_GChat(message_text))
+    else: 
+        await message.reply("После команды нужно указать описание для действия")
+
+@dp.message(F.text, Command(commands_list[4]))
+async def cmd_code(message: types.Message):
+    message_text = message.text
+    message_text = message_text.replace(f"/{commands_list[4]}", '')
+    if (message_text is not None) and (message_text != ' ') and (message_text != ''):
+        await message.reply("Запрос принят, генерирую ответ")
+        await message.reply(connect_with_GChat(message_text))
+    else: 
+        await message.reply("После команды нужно указать описание для действия")
+
+@dp.message(F.text, Command(commands_list[5]))
+async def cmd_code(message: types.Message):
+    message_text = message.text
+    message_text = message_text.replace(f"/{commands_list[5]}", '')
+    if (message_text is not None) and (message_text != ' ') and (message_text != ''):
+        await message.reply("Запрос принят, генерирую ответ")
+        await message.reply(connect_with_GChat(message_text))
+    else: 
+        await message.reply("После команды нужно указать описание для действия")
+
+@dp.message(F.text, Command(commands_list[6]))
+async def cmd_code(message: types.Message):
+    message_text = message.text
+    message_text = message_text.replace(f"/{commands_list[6]}", '')
+    if (message_text is not None) and (message_text != ' ') and (message_text != ''):
+        await message.reply("Запрос принят, генерирую ответ")
+        await message.reply(connect_with_GChat(message_text))
+    else: 
+        await message.reply("После команды нужно указать описание для действия")
+
+@dp.message(F.text, Command(commands_list[7]))
+async def cmd_code(message: types.Message):
+    message_text = message.text
+    message_text = message_text.replace(f"/{commands_list[7]}", '')
+    if (message_text is not None) and (message_text != ' ') and (message_text != ''):
+        await message.reply("Запрос принят, генерирую ответ")
+        await message.reply(connect_with_GChat(message_text))
+    else: 
+        await message.reply("После команды нужно указать описание для действия")
+
 
 if __name__ == "__main__":
     asyncio.run(main())
